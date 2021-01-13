@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="mystyle">
+        <item name="android:textSize">13pt</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:color">@color/grey</item>
+
+    </style>
+    <style name="mystyle2">
+        <item name="android:textSize">8pt</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="mystyle3">
+        <item name="android:textSize">8pt</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
+
+    <color name="colorPrimary" />
+    <color name="colorPrimaryDark" />
+    <color name="colorAccent" />
+    <color name="grey" />
+</resources>

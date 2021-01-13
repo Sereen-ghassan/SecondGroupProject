@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/imageId2"
+        android:layout_width="match_parent"
+        android:layout_height="260dp" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="149dp"
+            android:layout_height="wrap_content"
+            style="@style/mystyle2"
+            android:text="Car Name" />
+
+        <TextView
+            android:id="@+id/carName"
+            android:layout_width="149dp"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/carName"
+            style="@style/mystyle3"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="149dp"
+            android:layout_height="wrap_content"
+            android:text="Car Color"
+            style="@style/mystyle2"/>
+
+        <TextView
+            android:id="@+id/color"
+            android:layout_width="149dp"
+            android:layout_height="wrap_content"
+            style="@style/mystyle3"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="149dp"
+            android:layout_height="wrap_content"
+            android:text="Car Manufactorer"
+            style="@style/mystyle2"/>
+
+        <TextView
+            android:id="@+id/manufactorer"
+            android:layout_width="149dp"
+            android:layout_height="wrap_content"
+            style="@style/mystyle3"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="149dp"
+            android:layout_height="wrap_content"
+            android:text="Car Year"
+            style="@style/mystyle2"/>
+
+        <TextView
+            android:id="@+id/year"
+            android:layout_width="149dp"
+            android:layout_height="wrap_content"
+            style="@style/mystyle3"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="149dp"
+            android:layout_height="wrap_content"
+            android:text="Location"
+            style="@style/mystyle2"/>
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="149dp"
+            android:layout_height="wrap_content"
+            style="@style/mystyle3"/>
+    </LinearLayout>
+</LinearLayout>
