@@ -1,32 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cardview1"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_margin="7dp"
+    android:padding="10dp"
     card_view:cardCornerRadius="6dp"
     card_view:cardElevation="6dp"
-    card_view:contentPadding="7dp"
-    android:padding="10dp"
-    android:layout_margin="7dp"
-    card_view:cardBackgroundColor="#FF9800"
-    >
-    <ImageView
-        android:id="@+id/image"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1.0"
-        android:scaleType="centerCrop" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/TextViewCard"
-        android:textColor="#ffff"
-        android:textSize="20dp"
-        android:text="Sample"
-        android:layout_gravity="center"
-        android:layout_marginTop="3dp"
-        android:layout_marginBottom="3dp"/>
+    card_view:contentPadding="7dp">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/TextViewCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/SecondaryTextTheme" />
+
+            <TextView
+                android:id="@+id/TextViewCard2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/SecondaryTextTheme" />
+
+            <TextView
+                android:id="@+id/TextViewCard3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/SecondaryTextTheme" />
+        </LinearLayout>
+    </LinearLayout>
 </androidx.cardview.widget.CardView>

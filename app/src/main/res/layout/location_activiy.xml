@@ -5,28 +5,46 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".findLocation">
+
     <LinearLayout
-        android:layout_centerInParent="true"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:orientation="vertical" >
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        >
+
+        <Button
+            android:id="@+id/btn_start_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Get My Location"
+            android:backgroundTint="#94ab72"
+            android:layout_gravity="center_horizontal"
+
+            />
+
         <TextView
             android:id="@+id/txt_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="0.0 / 0.0"/>
+            android:text="Your Location is "
+            android:textSize="25dp" />
+
         <Button
-            android:id="@+id/btn_start_update"
-            android:text="Update"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <Button
-            android:id="@+id/btn_stop_update"
-            android:text="stop"
+            android:id="@+id/get_list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:enabled="false"/>
-    </LinearLayout>
+            android:enabled="false"
+            android:text="Get List Of Localities"
+            android:backgroundTint="#94ab72"
+            android:layout_gravity="center_horizontal"
+            />
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/location2" />
+    </LinearLayout>
 </RelativeLayout>

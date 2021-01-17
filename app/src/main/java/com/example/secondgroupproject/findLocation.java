@@ -2,6 +2,9 @@ package com.example.secondgroupproject;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
@@ -26,8 +29,9 @@ import java.util.List;
 public class findLocation extends AppCompatActivity {
 
     private static final int REQUEST_CODE = 1000;
+    private static Context context;
     TextView txt_location;
-    Button update, stop;
+    Button update, getList;
 
     LocationRequest locationRequest;
     LocationCallback locationCallback;
@@ -50,14 +54,15 @@ public class findLocation extends AppCompatActivity {
 
         }
     }
-
+    String[] array;
     @Override
     protected void onCreate(Bundle paramBundle) {
         super.onCreate(paramBundle);
         setContentView(R.layout.location_activiy);
+        context = this;
         txt_location = findViewById(R.id.txt_location);
         update = findViewById(R.id.btn_start_update);
-        stop = findViewById(R.id.btn_stop_update);
+        getList = findViewById(R.id.get_list);
 
         if (ActivityCompat.shouldShowRequestPermissionRationale(this, android.Manifest.permission.ACCESS_FINE_LOCATION)) {
             ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_CODE);
@@ -77,21 +82,18 @@ public class findLocation extends AppCompatActivity {
                     }
                     fusedLocationProviderClient.requestLocationUpdates(locationRequest, locationCallback, Looper.myLooper());
                     update.setEnabled(!update.isEnabled());
-                    stop.setEnabled(!stop.isEnabled());
+                    getList.setEnabled(!getList.isEnabled());
                 }
             });
 
-            stop.setOnClickListener(new View.OnClickListener() {
+            getList.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if (ActivityCompat.checkSelfPermission(findLocation.this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(findLocation.this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                        ActivityCompat.requestPermissions(findLocation.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_CODE);
-
-                        return;
-                    }
-                    fusedLocationProviderClient.removeLocationUpdates(locationCallback);
-                    update.setEnabled(!update.isEnabled());
-                    stop.setEnabled(!stop.isEnabled());
+                    String str = String.valueOf(txt_location .getText());
+                    array = str.split(",");
+                    Intent intent = new Intent(findLocation.this, veiwUponLocation.class);
+                    intent.putExtra("location",str);
+                    startActivity(intent);
                 }
             });
 

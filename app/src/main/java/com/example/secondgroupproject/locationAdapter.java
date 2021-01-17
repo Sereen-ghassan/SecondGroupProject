@@ -15,19 +15,18 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
 
-public class RecyclerViewCardViewAdapter extends RecyclerView.Adapter<RecyclerViewCardViewAdapter.ViewHolder> {
+public class locationAdapter extends RecyclerView.Adapter<locationAdapter.ViewHolder> {
 
     Context context;
+
     ArrayList<Locality> localities;
-    ImageView ivResult;
-    public RecyclerViewCardViewAdapter(Context context, ArrayList<Locality> getDataAdapter) {
+    public locationAdapter(Context context, ArrayList<Locality> getDataAdapter) {
 
         super();
 
@@ -48,6 +47,7 @@ public class RecyclerViewCardViewAdapter extends RecyclerView.Adapter<RecyclerVi
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
+
         CardView cardView = holder.cardView;
 
         Locality getDataAdapter1 = localities.get(position);
@@ -55,12 +55,12 @@ public class RecyclerViewCardViewAdapter extends RecyclerView.Adapter<RecyclerVi
         holder.SubjectPrice.setText(getDataAdapter1.getPrice());
         holder.SubjectSurface.setText(getDataAdapter1.getSurface());
         holder.SubjectLocalityType.setText(getDataAdapter1.getLocalityType());
-        Glide.with(context).load(getDataAdapter1.getImageID()).into(holder.imageView);
 
+        Glide.with(context).load(getDataAdapter1.getImageID()).into(holder.imageView);
         cardView.setOnClickListener((card) -> {
-            Intent intent = new Intent(card.getContext(), cardDetails.class);
+            Intent intent = new Intent(card.getContext(), cardLocation.class);
             intent.putExtra("Id", position);
-            MainActivity.context.startActivity(intent);
+            veiwUponLocation.context.startActivity(intent);
 
         });
     }
@@ -72,11 +72,9 @@ public class RecyclerViewCardViewAdapter extends RecyclerView.Adapter<RecyclerVi
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-
         public TextView SubjectPrice;
         public TextView SubjectSurface;
         public TextView SubjectLocalityType;
-        public LinearLayout mContainer;
         private CardView cardView;
         private ImageView imageView;
         public ViewHolder(CardView cardView) {
@@ -87,11 +85,10 @@ public class RecyclerViewCardViewAdapter extends RecyclerView.Adapter<RecyclerVi
             SubjectPrice = (TextView) itemView.findViewById(R.id.TextViewCard);
             SubjectSurface = (TextView) itemView.findViewById(R.id.TextViewCard2);
             SubjectLocalityType = (TextView) itemView.findViewById(R.id.TextViewCard3);
-             imageView = cardView.findViewById(R.id.image);
+            imageView = cardView.findViewById(R.id.image);
 
 
         }
 
     }
-
 }
